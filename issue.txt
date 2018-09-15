@@ -1,0 +1,9 @@
+1. Autoryzacja dla ownera przestała działać (po zalogowaniu się usera wczytuje się komponent owner) - w każdej chwili można wejść do ownera
+2. Z każdą sesją powinien resetować się koszyk, po skończonym zmaówieniu też
+3. User ma listę dań bez linków, za to widzi cenę i opis
+4. Owner może ustawić danie na niedostępne - temporary_inavailable można usunąć
+5. Summary component - wyświetlić nazwę potrawy
+6. Uzupełnić thankyou komponent
+7. Linki do top pizzas przestały działać
+8. /owner/orders/detail brakuje wyświetlania sumy
+* wyświetlić aktualnie zalogowanego usera

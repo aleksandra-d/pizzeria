@@ -1,0 +1,22 @@
+<div *ngIf="pasta">
+
+  <h2>{{pasta.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{pasta.id}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="pasta.name" placeholder="name">
+    </label>
+    <label>price: $
+      <input [(ngModel)]="pasta.price" placeholder="price">
+    </label>
+    <label>state:
+      <input [(ngModel)]="pasta.state" placeholder="state">
+    </label>
+    <label>description:
+      <input [(ngModel)]="pasta.description" placeholder="description">
+    </label>
+  </div>
+</div>
+<button (click)="save()">save</button>
+<button (click)="goBack()">go back</button>

@@ -1,0 +1,30 @@
+
+<div *ngIf="pizza" >
+
+    <h2>{{pizza.name | uppercase}} Details</h2>
+
+    <div>
+      <label>name:
+        <input [(ngModel)]="pizza.name" placeholder="name" >
+
+      </label>
+      <label>price: $
+        <input [(ngModel)]="pizza.price" placeholder="price" >
+
+      </label>
+      <label>state:
+        <input [(ngModel)]="pizza.state" placeholder="state" >
+      </label>
+      <label>description:
+        <input [(ngModel)]="pizza.description" placeholder="description" >
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+
+</div>
+
+
+
+
+

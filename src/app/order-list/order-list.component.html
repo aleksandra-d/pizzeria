@@ -1,0 +1,27 @@
+<table *ngIf="!loading">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th>surname</th>
+    <th>total price</th>
+    <th>state</th>
+    <th>actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders; let i = index;">
+    <td>{{ i + 1 }}</td>
+    <td>{{ order.clientInfo.name }}</td>
+    <td>{{ order.clientInfo.surname }}</td>
+    <td>${{ getTotalPrice(order) }}</td>
+    <td>{{ order.state }}</td>
+    <td>
+      <button routerLink="/owner/orders/detail/{{order.id}}">details</button>
+      <button (click)="clickEditHandler($event, order.id)">edit</button>
+      <button (click)="clickRemoveHandler($event, order.id)">remove</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="loading">Loading...</div>

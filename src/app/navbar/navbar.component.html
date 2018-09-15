@@ -1,0 +1,13 @@
+<div class="topnav" id="myTopnav">
+  <a  routerLink="/dashboard" class="active" *ngIf="!isAdmin">Home</a>
+  <a routerLink="/menu" *ngIf="!isAdmin">Menu</a>
+  <a routerLink="/pizzas" *ngIf="!isAdmin">Pizzas</a>
+  <a  routerLink="/pastas" *ngIf="!isAdmin">Pastas</a>
+  <a  routerLink="/drinks" *ngIf="!isAdmin">Drinks</a>
+  <a style="float: right" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+  <a style="float: right" routerLink="/login" *ngIf="isLoggedIn">Logout</a>
+  <a style="float: right" routerLink="/owner">Owner</a>
+  <a style="float: right" routerLink="/cart"  *ngIf="!isAdmin">Cart</a>
+  <a style="float: right" *ngIf="isLoggedIn">logged as {{ getUserType() }}</a>
+
+</div>

@@ -1,0 +1,24 @@
+<h2>My Drinks</h2>
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th>description</th>
+    <th>price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let drink of drinks; let i = index;">
+    <td>{{ i + 1 }}</td>
+    <td>{{ drink.name }}</td>
+    <td>{{drink.description }}</td>
+    <td>{{ drink.price }}</td>
+    <td>
+      <button type="button" (click)="addToCart($event, drink)">add to cart</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button (click)="goBack()">go back</button>

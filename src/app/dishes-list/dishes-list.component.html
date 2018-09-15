@@ -1,0 +1,26 @@
+<h2>Pizzas</h2>
+<ul class="dishes">
+  <li *ngFor="let pizza of pizzas">
+    <a routerLink="/pizzas/detail/{{pizza.id}}">
+      <span >{{pizza.id}}</span> {{pizza.name}}
+    </a>
+  </li>
+</ul>
+
+<h2>Pastas</h2>
+<ul class="dishes">
+  <li *ngFor="let pasta of pastas">
+    <a routerLink="/pastas/detail/{{pasta.id}}">
+      <span class ="badge">{{pasta.id}}</span>{{pasta.name}}
+    </a>
+  </li>
+</ul>
+<h2>Drinks</h2>
+<ul class="dishes">
+  <li *ngFor="let drink of drinks">
+    <a routerLink="/drinks/detail/{{drink.id}}">
+      <span class="badge">{{drink.id}}</span> {{drink.name}}
+    </a>
+  </li>
+</ul>
+<button (click)="goBack()">go back</button>

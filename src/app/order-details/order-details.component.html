@@ -1,0 +1,33 @@
+<div *ngIf="order">
+  <div>
+    <p>Name, Surname: {{order.clientInfo.name}} {{order.clientInfo.surname}}</p>
+    <p>Address:  {{order.clientInfo.street}}</p>
+    <p>Zip-code {{order.clientInfo.postalCode}}</p>
+    <p>City {{order.clientInfo.city}}</p>
+    <p>Status {{order.state}}</p>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>name</th>
+      <th>price</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="order.products.length > 0">
+    <tr *ngFor="let product of order.products;  let i = index;">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td>Sum :</td>
+      <td colspan="5" align="left">
+        ${{ getTotalPrice() }}
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

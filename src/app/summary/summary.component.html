@@ -1,0 +1,106 @@
+<h2>Delivery details</h2>
+
+<form *ngIf="getProductsLength() > 0" class="summary-form" [formGroup]="summaryForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
+  <h4>Produkty</h4>
+  <div *ngIf="getProductsLength() > 0">
+      <div formArrayName="products" *ngFor="let productControl of summaryForm.get('products').controls; let i = index;">
+        <div formGroupName="{{i}}">
+          <input [hidden]="true" formControlName="id">
+          <input [hidden]="true" formControlName="type">
+          <input [hidden]="true" formControlName="price">
+          <input [hidden]="true" formControlName="name">
+
+          <table>
+            <tr>
+              <td>{{ productControl.value.type}}</td>
+              <td>{{ productControl.value.price }}</td>
+              <td>{{ productControl.value.name }}</td>
+              <td>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('name').invalid && (summaryForm.get('name').dirty || summaryForm.get('name').touched)">
+    <label for="name">name:</label>
+    <input class="form-control" placeholder="name" type="text" id="name" formControlName="name" required>
+    <div *ngIf="summaryForm.get('name').invalid && (summaryForm.get('name').dirty || summaryForm.get('name').touched)" class="alert alert-danger">
+      <ul>
+        <!--<li *ngIf="summaryForm.get('name').errors.required">-->
+        <li *ngIf="summaryForm.get('name').hasError('required')">
+        Name is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('surname').invalid && (summaryForm.get('surname').dirty || summaryForm.get('surname').touched)">
+    <label for="surname">surname:</label>
+    <input class="form-control" placeholder="surname" type="text" id="surname" formControlName="surname" required>
+    <div *ngIf="summaryForm.get('surname').invalid && (summaryForm.get('surname').dirty || summaryForm.get('surname').touched)" class="alert alert-danger">
+      <ul>
+        <li *ngIf="summaryForm.get('surname').hasError('required')">
+          Surname is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('street').invalid && (summaryForm.get('street').dirty || summaryForm.get('street').touched)">
+    <label for="street">street:</label>
+    <input class="form-control" placeholder="street" type="text" id="street" formControlName="street" required>
+    <div *ngIf="summaryForm.get('street').invalid && (summaryForm.get('street').dirty || summaryForm.get('street').touched)" class="alert alert-danger">
+      <ul>
+        <li *ngIf="summaryForm.get('street').hasError('required')">
+          Street is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('postalcode').invalid && (summaryForm.get('postalcode').dirty || summaryForm.get('postalcode').touched)">
+    <label for="postalcode">postalcode:</label>
+    <input class="form-control" placeholder="postalcode" type="text" id="postalcode" formControlName="postalcode" required>
+    <div *ngIf="summaryForm.get('postalcode').invalid && (summaryForm.get('postalcode').dirty || summaryForm.get('postalcode').touched)" class="alert alert-danger">
+      <ul>
+        <li *ngIf="summaryForm.get('postalcode').hasError('required')">
+          Postal code is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('city').invalid && (summaryForm.get('city').dirty || summaryForm.get('city').touched)">
+    <label for="city">city:</label>
+    <input class="form-control" placeholder="city" type="text" id="city" formControlName="city" required>
+    <div *ngIf="summaryForm.get('city').invalid && (summaryForm.get('city').dirty || summaryForm.get('city').touched)" class="alert alert-danger">
+      <ul>
+        <li *ngIf="summaryForm.get('city').hasError('required')">
+          City is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="summaryForm.get('phone').invalid && (summaryForm.get('phone').dirty || summaryForm.get('phone').touched)">
+    <label for="phone">phone:</label>
+    <input class="form-control" placeholder="phone" type="text" id="phone" formControlName="phone" required>
+    <div *ngIf="summaryForm.get('phone').invalid && (summaryForm.get('phone').dirty || summaryForm.get('phone').touched)" class="alert alert-danger">
+      <ul>
+        <li *ngIf="summaryForm.get('phone').hasError('required')">
+          Phone is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="!summaryForm.valid">Submit</button>
+  </div>
+</form>
+
+<div *ngIf="getProductsLength() == 0">
+  Koszyk jest pusty
+</div>

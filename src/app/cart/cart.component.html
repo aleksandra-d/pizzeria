@@ -1,0 +1,34 @@
+
+<!--{{products | json}}-->
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th class="count">Price</th>
+  </tr>
+  <ng-container *ngFor="let product of products; let i = index;">
+    <tr>
+      <td>{{ i + 1}}</td>
+      <td>
+        {{ product.name }}
+      </td>
+      <td>
+        {{ product.description }}
+      </td>
+      <td>{{product.type }}</td>
+      <td>{{product.price }}</td>
+      <button (click)="removeProductFromCart(product, i)">Remove from cart</button>
+    </tr>
+  </ng-container>
+  <tfoot>
+    <tr>
+      <td>Sum:</td>
+      <td colspan="5" align="left">
+        ${{ getTotalPrice() }}
+      </td>
+    </tr>
+  </tfoot>
+</table>
+<button routerLink="/summary">Order</button>

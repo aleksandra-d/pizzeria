@@ -1,0 +1,39 @@
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group" [class.has-error]="f.login.invalid && (f.login.dirty || f.login.touched)">
+    <label for="login">login:</label>
+    <input class="form-control" placeholder="login" type="text" id="login" formControlName="login" required>
+    <div *ngIf="f.login.invalid && (f.login.dirty || f.login.touched) && f.login.errors.required" class="alert alert-danger">
+      <ul>
+        <li>
+          Login is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="f.password.invalid && (f.password.dirty || f.password.touched)">
+    <label for="password">password:</label>
+    <input class="form-control" placeholder="password" type="password" id="password" formControlName="password" required>
+    <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched) && f.password.errors.required" class="alert alert-danger">
+      <ul>
+        <li>
+          Password is required
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="loginForm.errors?.incorrect" class="form-group">
+    <div class="alert alert-danger">
+      <ul>
+        <li>
+          Incorrect login or password
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+  </div>
+</form>
