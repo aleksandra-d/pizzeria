@@ -15,6 +15,9 @@ export class DishService {
   private url = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
+  /**
+   * gets available pizzas
+   */
   getPizzasForClient(): Observable<Pizza[]> {
     return this
       .http
@@ -25,21 +28,28 @@ export class DishService {
         })
       );
   }
+
+  /**
+   * gets all pizzas
+   */
   getPizzasForOwner(): Observable<Pizza[]> {
     return this
       .http
       .get<Pizza[]>(`${this.url}/pizzas`);
   }
-  getPizza(id: string): Observable<Pizza> {
-    return this
-      .http
-      .get<Pizza>(`${this.url}/pizzas/${id}`);
-  }
+
+  /**
+   * gets all pastas
+   */
   getPastasForOwner(): Observable<Pasta[]> {
     return this
       .http
       .get<Pasta[]>(`${this.url}/pastas`);
   }
+
+  /**
+   * gets available pastas
+   */
   getPastasForClient(): Observable<Pasta[]> {
     return this
       .http
@@ -50,27 +60,36 @@ export class DishService {
       );
   }
 
-  getPasta(id: string): Observable<Pasta> {
-    return this
-      .http
-      .get<Pasta>(`${this.url}/pastas/${id}`);
-  }
-
+  /**
+   * gets pastas by id
+   * @param id
+   */
   getPastaById(id: string): Observable<any> {
     return this.http
       .get(`${this.url}/pastas/${id}`);
   }
 
+  /**
+   * gets drink by id
+   * @param id
+   */
   getDrinkById(id: string): Observable<any> {
     return this.http
       .get(`${this.url}/drinks/${id}`);
   }
 
+  /**
+   * gets piiza by id
+   * @param id
+   */
   getPizzaById(id: string): Observable<any> {
     return this.http
       .get(`${this.url}/pizzas/${id}`);
   }
 
+  /**
+   * gets available drinks
+   */
   getDrinksForClient(): Observable<Drink[]> {
     return this
       .http
@@ -81,23 +100,35 @@ export class DishService {
       );
   }
 
+  /**
+   * gets all drinks
+   */
   getDrinksForOwner(): Observable<Drink[]> {
     return this
       .http
       .get<Drink[]>(`${this.url}/drinks`);
   }
 
-  getDrink(id: string): Observable<Drink> {
-    return this
-      .http
-      .get<Drink>(`${this.url}/drinks/${id}`);
-  }
+  /**
+   *
+   * @param pizza
+   */
   updatePizza (pizza: Pizza): Observable<any> {
     return this.http.put<Pizza>((`${this.url}/pizzas/${pizza.id}`), pizza);
   }
+
+  /**
+   *
+   * @param pasta
+   */
   updatePasta (pasta: Pasta): Observable<any> {
     return this.http.put<Pasta>((`${this.url}/pastas/${pasta.id}`), pasta);
   }
+
+  /**
+   *
+   * @param drink
+   */
   updateDrink (drink: Drink): Observable<any> {
     return this.http.put<Drink>((`${this.url}/drinks/${drink.id}`), drink);
   }

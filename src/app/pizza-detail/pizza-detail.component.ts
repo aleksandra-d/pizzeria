@@ -5,7 +5,6 @@ import {Location} from '@angular/common';
 import {DishService} from '../service/dish.service';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
-import {State} from '../enum/state';
 import {AuthenticationService} from '../service/authentication.service';
 
 
@@ -39,17 +38,26 @@ export class PizzaDetailComponent implements OnInit, OnDestroy {
     this.getPizza();
   }
 
+  /**
+   * gets pizza
+   */
   getPizza(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.dishService.getPizza(id)
+    this.dishService.getPizzaById(id)
       .pipe(takeUntil(this.destroy$))
       .subscribe(pizza => this.pizza = pizza);
   }
 
+  /**
+   * leads to previous location
+   */
   goBack(): void {
     this.location.back();
   }
 
+  /**
+   * saves pizza
+   */
   save(): void {
     this.dishService.updatePizza(this.pizza)
       .subscribe(() => this.goBack());

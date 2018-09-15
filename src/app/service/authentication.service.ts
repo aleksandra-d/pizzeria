@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/internal/operators';
 
@@ -15,6 +15,11 @@ export class AuthenticationService {
     this.isLoggedInChange.subscribe((value: boolean) => this.isLoggedIn = value);
   }
 
+  /**
+   *
+   * @param login
+   * @param password
+   */
   login(login: string, password: string): Observable<any> {
     return this.http
       .get<any>(`${this.url}/users?_limit=1&username=${login}&password=${password}`)
@@ -31,11 +36,18 @@ export class AuthenticationService {
         }),
       );
   }
+
+  /**
+   * handles logout
+   */
   logout() {
     localStorage.removeItem('currentUser');
     this.isLoggedInChange.next(!!this.getCurrentUser());
   }
 
+  /**
+   * gets current user
+   */
   getCurrentUser(): any {
     return JSON.parse(localStorage.getItem('currentUser'));
   }

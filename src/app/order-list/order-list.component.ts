@@ -3,7 +3,6 @@ import {Order} from '../models/Order';
 import {OrderService} from '../service/order.service';
 import {interval, Subject, Subscription} from 'rxjs';
 import {Product} from '../models/Product';
-import {Router} from '@angular/router';
 import {takeUntil} from 'rxjs/internal/operators';
 
 @Component({
@@ -15,7 +14,6 @@ export class OrderListComponent implements OnInit, OnDestroy {
   orders: Array<Order>;
   private sub: Subscription;
   private destroy$ = new Subject();
-  loading = true;
 
   constructor(private orderService: OrderService) { }
 
@@ -26,13 +24,13 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
     interval$.pipe(takeUntil(this.destroy$))
       .subscribe(r => {
-        this.loading = true;
         this.getFreshOrders();
       });
-   // this.sub = this.orderService
-   //    .getAll()
-   //    .subscribe((orders: Array<Order>) => this.orders = orders);
   }
+
+  /**
+   * gets fresh orders
+   */
   getFreshOrders() {
     if (this.sub) {
       this.sub.unsubscribe();
@@ -42,7 +40,6 @@ export class OrderListComponent implements OnInit, OnDestroy {
       .getAll()
       .subscribe((orders: Array<Order>) => {
           this.orders = orders;
-          this.loading = false;
         }
       );
   }
@@ -53,19 +50,14 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
     this.destroy$.next(true);
   }
+
+  /**
+   *
+   * @param order
+   */
   getTotalPrice(order: Order): Number {
     return order.products
       .map((product: Product) => +product.price)
       .reduce((a, b) => a + b, 0);
-  }
-  clickEditHandler(event: Event, id: number) {
-    /**
-     * TODO dopisać obsługę
-     */
-  }
-  clickRemoveHandler(event: Event, id: number) {
-    /**
-     * TODO dopisać obsługę
-     */
   }
 }

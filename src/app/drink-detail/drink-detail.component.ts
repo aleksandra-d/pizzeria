@@ -25,7 +25,7 @@ export class DrinkDetailComponent implements OnInit, OnDestroy {
   }
   getDrink(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.dishService.getDrink(id)
+    this.dishService.getDrinkById(id)
       .pipe(takeUntil(this.destroy$))
       .subscribe(drink => this.drink = drink);
   }
