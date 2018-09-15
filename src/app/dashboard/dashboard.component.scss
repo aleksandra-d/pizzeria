@@ -49,6 +49,12 @@ h4 {
 img {
   width: 100%;
 }
+a.col-1-4 {
+  float: none;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
 }
