@@ -10,6 +10,11 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router: Router) {}
 
+  /***
+   *
+   * @param next
+   * @param state
+   */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {

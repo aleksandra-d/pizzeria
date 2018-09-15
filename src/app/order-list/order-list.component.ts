@@ -15,7 +15,6 @@ export class OrderListComponent implements OnInit, OnDestroy {
   orders: Array<Order>;
   private sub: Subscription;
   private destroy$ = new Subject();
-  loading = true;
 
   constructor(private orderService: OrderService) { }
 
@@ -26,12 +25,8 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
     interval$.pipe(takeUntil(this.destroy$))
       .subscribe(r => {
-        this.loading = true;
         this.getFreshOrders();
       });
-   // this.sub = this.orderService
-   //    .getAll()
-   //    .subscribe((orders: Array<Order>) => this.orders = orders);
   }
   getFreshOrders() {
     if (this.sub) {
@@ -42,7 +37,6 @@ export class OrderListComponent implements OnInit, OnDestroy {
       .getAll()
       .subscribe((orders: Array<Order>) => {
           this.orders = orders;
-          this.loading = false;
         }
       );
   }
@@ -57,15 +51,5 @@ export class OrderListComponent implements OnInit, OnDestroy {
     return order.products
       .map((product: Product) => +product.price)
       .reduce((a, b) => a + b, 0);
-  }
-  clickEditHandler(event: Event, id: number) {
-    /**
-     * TODO dopisać obsługę
-     */
-  }
-  clickRemoveHandler(event: Event, id: number) {
-    /**
-     * TODO dopisać obsługę
-     */
   }
 }

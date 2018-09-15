@@ -18,7 +18,6 @@ body {
   font-size: 17px;
 }
 
-
 .topnav a:hover {
   background-color: #E5A340;
   color: #402709;
@@ -27,10 +26,6 @@ body {
 .active {
   background-color: #E58C1F;
   color: white;
-}
-
-.topnav .icon {
-  display: none;
 }
 
 @media screen and (max-width: 600px) {

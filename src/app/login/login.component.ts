@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loading = false;
 
   constructor(private auth: AuthenticationService, private router: Router, private fb: FormBuilder) { }
 
@@ -34,22 +33,16 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.loading = true;
     this.auth.login(this.f.login.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         users => {
           if (this.auth.isLoggedIn) {
-            this.loading = false;
             this.router.navigateByUrl('/owner', { skipLocationChange: true });
           }
-
           this.loginForm.setErrors({ 'incorrect': true });
           this.loginForm.controls.login.setErrors({ 'invalid': true });
           this.loginForm.controls.password.setErrors({ 'invalid': true });
-        },
-        error => {
-          this.loading = false;
         }
       );
   }

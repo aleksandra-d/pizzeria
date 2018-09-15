@@ -18,10 +18,8 @@
     <td>{{ order.state }}</td>
     <td>
       <button routerLink="/owner/orders/detail/{{order.id}}">details</button>
-      <button (click)="clickEditHandler($event, order.id)">edit</button>
-      <button (click)="clickRemoveHandler($event, order.id)">remove</button>
+
     </td>
   </tr>
   </tbody>
 </table>
-<div *ngIf="loading">Loading...</div>
