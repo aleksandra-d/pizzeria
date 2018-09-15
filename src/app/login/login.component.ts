@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  /**
+   * handles login validation
+   */
   onSubmit() {
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -47,6 +50,9 @@ export class LoginComponent implements OnInit {
       );
   }
 
+  /**
+   * returns controls
+   */
   get f() {
     return this.loginForm.controls;
   }

@@ -3,7 +3,6 @@ import {Order} from '../models/Order';
 import {OrderService} from '../service/order.service';
 import {interval, Subject, Subscription} from 'rxjs';
 import {Product} from '../models/Product';
-import {Router} from '@angular/router';
 import {takeUntil} from 'rxjs/internal/operators';
 
 @Component({
@@ -28,6 +27,10 @@ export class OrderListComponent implements OnInit, OnDestroy {
         this.getFreshOrders();
       });
   }
+
+  /**
+   * gets fresh orders
+   */
   getFreshOrders() {
     if (this.sub) {
       this.sub.unsubscribe();
@@ -47,6 +50,11 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
     this.destroy$.next(true);
   }
+
+  /**
+   *
+   * @param order
+   */
   getTotalPrice(order: Order): Number {
     return order.products
       .map((product: Product) => +product.price)

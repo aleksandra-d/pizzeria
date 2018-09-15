@@ -24,12 +24,20 @@ export class PastaDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getPasta();
   }
+
+  /**
+   * gets pasta
+   */
   getPasta(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.dishService.getPasta(id)
+    this.dishService.getPastaById(id)
       .pipe(takeUntil(this.destroy$))
       .subscribe(pasta => this.pasta = pasta);
   }
+
+  /**
+   * leads to previous location
+   */
   goBack(): void {
     this.location.back();
   }
@@ -37,6 +45,10 @@ export class PastaDetailComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
+
+  /**
+   * saves pasta
+   */
   save(): void {
     this.dishService.updatePasta(this.pasta)
       .subscribe(() => this.goBack());

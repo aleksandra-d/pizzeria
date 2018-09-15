@@ -8,7 +8,6 @@ export class ProductService {
   constructor() { }
 
   /**
-   *
    * @param {Product} product
    */
   addToCart(product: Product): void {
@@ -20,7 +19,6 @@ export class ProductService {
   }
 
   /**
-   *
    * @param i - index
    */
   removeProductFromCartOnLocalStorage(i: number): void {
@@ -29,7 +27,6 @@ export class ProductService {
     localStorage.setItem('cart', JSON.stringify(products));
   }
   /**
-   *
    * @returns {Array<Product>}
    */
   getAllProducts(): Array<Product> {

@@ -28,6 +28,12 @@ export class PizzaComponent implements OnInit, OnDestroy {
         this.pizzas = data;
       });
   }
+
+  /**
+   *
+   * @param event
+   * @param pizza
+   */
   addToCart(event: Event, pizza: Pizza): void {
     const product = new Product();
     product.id = pizza.id;
@@ -39,6 +45,10 @@ export class PizzaComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  /**
+   * leads to previous page
+   */
   goBack(): void {
     this.location.back();
   }

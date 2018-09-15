@@ -54,6 +54,10 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
         });
       });
   }
+
+  /**
+   * returns sum of orders' products
+   */
   getTotalPrice(): Number {
     return this.order.products
       .map((product: Product) => +product.price)
@@ -63,6 +67,9 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  /**
+   * leads to previous page
+   */
   goBack() {
     this.location.back();
   }

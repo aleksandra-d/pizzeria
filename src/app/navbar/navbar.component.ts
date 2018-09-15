@@ -23,6 +23,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * returns user
+   */
   getUserType(): string {
     return this.isAdmin ? 'admin' : 'user';
   }

@@ -27,6 +27,12 @@ export class PastaComponent implements OnInit, OnDestroy {
         this.pastas = data;
       });
   }
+
+  /**
+   *
+   * @param event
+   * @param pasta
+   */
   addToCart(event: Event, pasta: Pasta): void {
     const product = new Product();
     product.id = pasta.id;
@@ -39,6 +45,10 @@ export class PastaComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  /**
+   * leads to previous page
+   */
   goBack() {
     this.location.back();
   }

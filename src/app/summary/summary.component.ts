@@ -25,7 +25,9 @@ export class SummaryComponent implements OnInit {
     private formBuilder: FormBuilder
   ) { }
 
-
+  /**
+   * handles form submit
+   */
   onSubmit() {
     const order = new Order();
     order.state = OrderStatus.WAITING;
@@ -63,6 +65,9 @@ export class SummaryComponent implements OnInit {
     console.log(this.summaryForm);
   }
 
+  /**
+   * handles adding products to form
+   */
   addProductsToForm(): void {
     this.productItems.forEach(product => {
       (<FormArray>this.summaryForm.get('products'))
@@ -74,6 +79,10 @@ export class SummaryComponent implements OnInit {
       }));
     });
   }
+
+  /**
+   * returns length of products
+   */
   getProductsLength(): number {
     return this.productItems.length;
   }
