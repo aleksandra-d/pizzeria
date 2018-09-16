@@ -1,5 +1,6 @@
-<h2>My Drinks</h2>
-<table>
+<h2>Our Drinks</h2>
+<div style="overflow-x: auto">
+<table id="food-table" class="center-table">
   <thead>
   <tr>
     <th>#</th>
@@ -14,11 +15,12 @@
     <td>{{ i + 1 }}</td>
     <td>{{ drink.name }}</td>
     <td>{{drink.description }}</td>
-    <td>{{ drink.price }}</td>
+    <td>${{ drink.price }}</td>
     <td>
-      <button type="button" (click)="addToCart($event, drink)">add to cart</button>
+      <button type="button" (click)="addToCart($event, drink)" class="add">add to cart</button>
     </td>
   </tr>
   </tbody>
 </table>
-<button (click)="goBack()">go back</button>
+</div>
+<button (click)="goBack()" class="back">go back</button>

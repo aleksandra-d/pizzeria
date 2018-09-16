@@ -3,7 +3,6 @@ import { Location} from '@angular/common';
 import {Drink} from '../interface/drink';
 import {DishService} from '../service/dish.service';
 import {Subscription} from 'rxjs';
-import {Pasta} from '../interface/pasta';
 import {Product} from '../models/Product';
 import {Type} from '../enum/type';
 import {ProductService} from '../service/product.service';

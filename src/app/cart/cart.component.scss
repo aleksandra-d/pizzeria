@@ -1,0 +1,64 @@
+#food-table {
+  font-family:  Montserrat, Helvetica, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+table.center-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#food-table td, #food-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#food-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#food-table tr:hover {background-color: #ddd;}
+
+#food-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #FF9C23;
+  color: white;
+}
+button.back {
+  background-color: #998852;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 10px;
+  cursor: pointer;
+  border-radius: 0.2em;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+}
+button.remove {
+  background-color: #5508CC;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 5px;
+  cursor: pointer;
+  border-radius: 0.2em;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+}
+button.remove:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
+}
+button.back:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
+}

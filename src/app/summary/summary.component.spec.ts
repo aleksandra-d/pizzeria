@@ -154,7 +154,7 @@ describe('SummaryComponent', () => {
       const street = component.summaryForm.controls.street;
 
       expect(street.valid).toBeFalsy();
-      // name field is required
+      // street field is required
       errors = street.errors || {};
       expect(errors['required']).toBeTruthy();
       street.setValue('polna');
@@ -167,7 +167,7 @@ describe('SummaryComponent', () => {
       const postalcode = component.summaryForm.controls.postalcode;
 
       expect(postalcode.valid).toBeFalsy();
-      // name field is required
+      // postalcode field is required
       errors = postalcode.errors || {};
       expect(errors['required']).toBeTruthy();
       postalcode.setValue('polna');
