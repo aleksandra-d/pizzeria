@@ -6,10 +6,18 @@
 #summary-table {
   font-family:  Montserrat, Helvetica, Arial, sans-serif;
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 15px;
 }
-
- td,  th {
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  margin: 0;
+}
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+}
+td,  th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -26,7 +34,9 @@ th {
   color: white;
 }
 .summary-form {
-  max-width: 400px;
+  max-width: 670px;
+  width: 100%;
+  padding: 15px;
   display: block;
   margin-left: auto;
   margin-right: auto;

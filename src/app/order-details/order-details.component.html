@@ -6,7 +6,7 @@
     <p>City {{order.clientInfo.city}}</p>
     <p>Status {{order.state}}</p>
   </div>
-  <table>
+  <table id="order-details-table" class="center-table">
     <thead>
     <tr>
       <th>#</th>
@@ -18,7 +18,7 @@
     <tr *ngFor="let product of order.products;  let i = index;">
       <td>{{ i + 1 }}</td>
       <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
+      <td>${{ product.price }}</td>
     </tr>
     </tbody>
     <tfoot>
@@ -31,3 +31,4 @@
     </tfoot>
   </table>
 </div>
+<button (click)="goBack()" class="back">go back</button>
