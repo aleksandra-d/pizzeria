@@ -1,13 +1,15 @@
-#food-table {
-  font-family:  Montserrat, Helvetica, Arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
 h2 {
   font-family: 'Pacifico', cursive;
   font-size: 3em;
   margin: 0;
 }
+
+#food-table {
+  font-family:  Montserrat, Helvetica, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
 table.center-table {
   margin-left: auto;
   margin-right: auto;
@@ -45,6 +47,7 @@ button.back {
   transition-duration: 0.4s;
 
 }
+
 button.order {
   background-color: #08CCA2;
   border: none;
@@ -61,6 +64,7 @@ button.order {
   transition-duration: 0.4s;
 
 }
+
 button.remove {
   background-color: #5508CC;
   border: none;
@@ -77,12 +81,15 @@ button.remove {
   transition-duration: 0.4s;
 
 }
+
 button.remove:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }
+
 button.order:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }
+
 button.back:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }

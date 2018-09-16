@@ -8,7 +8,6 @@ import {AuthenticationService} from '../service/authentication.service';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
-
   isAdmin: boolean;
 
   constructor(private auth: AuthenticationService) {
