@@ -93,5 +93,13 @@ export class SummaryComponent implements OnInit {
   get formData() {
     return <FormArray>this.summaryForm.get('products');
   }
+  /**
+   * counts sum of products in cart
+   */
+  getTotalPrice(): Number {
+    return this.productItems
+      .map((product: Product) => +product.price)
+      .reduce((a, b) => a + b, 0);
+  }
 
 }
