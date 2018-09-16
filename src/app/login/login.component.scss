@@ -3,7 +3,11 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  margin: 0;
+}
 .login-form {
   max-width: 400px;
   display: block;
