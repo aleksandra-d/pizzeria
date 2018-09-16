@@ -4,7 +4,7 @@
       "id": "11",
       "name": "margherita",
       "price": "40",
-      "description": "",
+      "description": "cheese",
       "state": "AVAILABLE",
       "type": "PIZZA"
     },

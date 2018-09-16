@@ -1,10 +1,14 @@
-<table>
+<h2>Cart</h2>
+
+<div style="overflow-x: auto">
+  <table id="food-table" class="center-table">
   <tr>
     <th>#</th>
     <th>Name</th>
     <th>Description</th>
     <th>Type</th>
     <th class="count">Price</th>
+    <th></th>
   </tr>
   <ng-container *ngFor="let product of products; let i = index;">
     <tr>
@@ -16,8 +20,8 @@
         {{ product.description }}
       </td>
       <td>{{product.type }}</td>
-      <td>{{product.price }}</td>
-      <button (click)="removeProductFromCart(product, i)">Remove from cart</button>
+      <td>${{product.price }}</td>
+      <td><button (click)="removeProductFromCart(product, i)" class="remove">remove</button></td>
     </tr>
   </ng-container>
   <tfoot>
@@ -29,4 +33,7 @@
     </tr>
   </tfoot>
 </table>
-<button routerLink="/summary">Order</button>
+</div>
+<button (click)="goBack()" class="back">go back</button>
+
+<button routerLink="/summary" class="back">order</button>

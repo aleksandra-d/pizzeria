@@ -7,6 +7,7 @@ import {Pizza} from '../interface/pizza';
 import {DishService} from '../service/dish.service';
 import {Observable} from 'rxjs';
 import {Type} from '../enum/type';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -19,7 +20,8 @@ export class CartComponent implements OnInit {
   pastas: Pasta[];
   pizzas: Pizza[];
 
-  constructor(private productService: ProductService, private dishService: DishService) {
+  constructor(private productService: ProductService, private dishService: DishService,
+              private location: Location) {
   }
 
   ngOnInit() {
@@ -73,5 +75,12 @@ export class CartComponent implements OnInit {
     this.products = this.products.filter(
       item => item !== product
     );
+  }
+
+  /**
+   * leads to previous page
+   */
+  goBack(): void {
+    this.location.back();
   }
 }
