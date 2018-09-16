@@ -219,6 +219,139 @@
     }
   ],
   "orders": [
-
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "14",
+          "type": "PIZZA",
+          "price": "22",
+          "name": "prosciutto"
+        },
+        {
+          "id": "24",
+          "type": "PASTA",
+          "price": "22",
+          "name": "pasta riccardo"
+        }
+      ],
+      "clientInfo": {
+        "name": "cecylia",
+        "surname": "miła",
+        "street": "kwiatowa",
+        "postalCode": "58-100",
+        "city": "świdnica",
+        "phone": "258 2258 66"
+      },
+      "id": 1
+    },
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "35",
+          "type": "DRINK",
+          "price": "25",
+          "name": "apple marigold"
+        },
+        {
+          "id": "33",
+          "type": "DRINK",
+          "price": "11",
+          "name": "salty lassi with cumin"
+        },
+        {
+          "id": "24",
+          "type": "PASTA",
+          "price": "22",
+          "name": "pasta riccardo"
+        }
+      ],
+      "clientInfo": {
+        "name": "henryk",
+        "surname": "śmiały",
+        "street": "armii krajowej",
+        "postalCode": "55-100",
+        "city": "wrocław",
+        "phone": "963 014 852"
+      },
+      "id": 2
+    },
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "30",
+          "type": "PASTA",
+          "price": "34",
+          "name": "ravioli  antonia"
+        },
+        {
+          "id": "14",
+          "type": "PIZZA",
+          "price": "22",
+          "name": "prosciutto"
+        },
+        {
+          "id": "33",
+          "type": "DRINK",
+          "price": "11",
+          "name": "salty lassi with cumin"
+        }
+      ],
+      "clientInfo": {
+        "name": "katarzyna",
+        "surname": "dobra",
+        "street": "kręta",
+        "postalCode": "96-258",
+        "city": "śmiałowice",
+        "phone": "963 82 55 77"
+      },
+      "id": 3
+    },
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "32",
+          "type": "DRINK",
+          "price": "8",
+          "name": "adam’s mulled wine"
+        },
+        {
+          "id": "34",
+          "type": "DRINK",
+          "price": "12",
+          "name": "coffee"
+        },
+        {
+          "id": "14",
+          "type": "PIZZA",
+          "price": "22",
+          "name": "prosciutto"
+        },
+        {
+          "id": "18",
+          "type": "PIZZA",
+          "price": "30",
+          "name": "napoletana"
+        },
+        {
+          "id": "24",
+          "type": "PASTA",
+          "price": "22",
+          "name": "pasta riccardo"
+        }
+      ],
+      "clientInfo": {
+        "name": "letycja",
+        "surname": "von klomp",
+        "street": "kwiatowa",
+        "postalCode": "52-789",
+        "city": "kazimierz",
+        "phone": "852 852 025"
+      },
+      "id": 4
+    }
   ]
 }
