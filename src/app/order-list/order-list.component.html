@@ -1,4 +1,6 @@
-<table *ngIf="!loading">
+<h2>Orders</h2>
+<div style="overflow-x: auto">
+<table id="summary-table" class="center-table">
   <thead>
   <tr>
     <th>#</th>
@@ -17,9 +19,11 @@
     <td>${{ getTotalPrice(order) }}</td>
     <td>{{ order.state }}</td>
     <td>
-      <button routerLink="/owner/orders/detail/{{order.id}}">details</button>
+      <button type="button" routerLink="/owner/orders/detail/{{order.id}}" class="details">details</button>
 
     </td>
   </tr>
   </tbody>
 </table>
+</div>
+<button (click)="goBack()" class="back">go back</button>

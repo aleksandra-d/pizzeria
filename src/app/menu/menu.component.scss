@@ -10,6 +10,11 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 5em;
+  margin: 0;
+}
 h3 {
   text-align: center; margin-bottom: 0;
 }
@@ -29,7 +34,7 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #006798;
+  background-color: #0078B2;
   border-radius: 2px;
 }
 .module:hover {

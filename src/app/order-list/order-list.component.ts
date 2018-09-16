@@ -4,6 +4,7 @@ import {OrderService} from '../service/order.service';
 import {interval, Subject, Subscription} from 'rxjs';
 import {Product} from '../models/Product';
 import {takeUntil} from 'rxjs/internal/operators';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-order-list',
@@ -15,7 +16,7 @@ export class OrderListComponent implements OnInit, OnDestroy {
   private sub: Subscription;
   private destroy$ = new Subject();
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService,  private location: Location) { }
 
   ngOnInit() {
     this.getFreshOrders();
@@ -59,5 +60,12 @@ export class OrderListComponent implements OnInit, OnDestroy {
     return order.products
       .map((product: Product) => +product.price)
       .reduce((a, b) => a + b, 0);
+  }
+
+  /**
+   * leads to previous page
+   */
+  goBack(): void {
+    this.location.back();
   }
 }
