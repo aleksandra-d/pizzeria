@@ -219,6 +219,37 @@
     }
   ],
   "orders": [
-
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "14",
+          "type": "PIZZA",
+          "price": "22",
+          "name": "prosciutto"
+        },
+        {
+          "id": "25",
+          "type": "PASTA",
+          "price": "25",
+          "name": "rigatoni francesco"
+        },
+        {
+          "id": "34",
+          "type": "DRINK",
+          "price": "12",
+          "name": "coffee"
+        }
+      ],
+      "clientInfo": {
+        "name": "ola",
+        "surname": "dydyńska",
+        "street": "polna",
+        "postalCode": "85-100",
+        "city": "wrocław",
+        "phone": "288 222 666"
+      },
+      "id": 1
+    }
   ]
 }
