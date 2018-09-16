@@ -11,6 +11,11 @@ h1 {
   font-family: 'Montserrat', black, sans-serif;
   font-size: 250%;
 }
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 5em;
+  margin: 0;
+}
 h3 {
   text-align: center; margin-bottom: 0;
 }
@@ -62,4 +67,7 @@ a.col-1-4 {
   .module {
     min-width: 60px;
   }
+}
+#container {
+  padding-bottom: 50px;
 }

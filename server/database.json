@@ -151,7 +151,7 @@
       "name": "tagliolini teresa",
       "price": "33",
       "description": "cuttlefish ink ragu",
-      "state": "AVAILABLE",
+      "state": "UNAVAILABLE",
       "type": "PASTA"
     },
     {
@@ -364,6 +364,38 @@
         "phone": "228282"
       },
       "id": 4
+    },
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "14",
+          "type": "PIZZA",
+          "price": "22",
+          "name": "prosciutto"
+        },
+        {
+          "id": "33",
+          "type": "DRINK",
+          "price": "11",
+          "name": "salty lassi with cumin"
+        },
+        {
+          "id": "23",
+          "type": "PASTA",
+          "price": "21",
+          "name": "spaghetti sally"
+        }
+      ],
+      "clientInfo": {
+        "name": "ola ola",
+        "surname": "ola",
+        "street": "ola",
+        "postalCode": "ola",
+        "city": "ola",
+        "phone": "228282"
+      },
+      "id": 5
     }
   ]
 }

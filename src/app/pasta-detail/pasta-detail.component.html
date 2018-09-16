@@ -1,9 +1,8 @@
 <div *ngIf="pasta">
 
   <h2>{{pasta.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{pasta.id}}</div>
 
-  <div>
+  <div id="inputs">
     <label>name:
       <input [(ngModel)]="pasta.name" placeholder="name">
     </label>
@@ -18,5 +17,5 @@
     </label>
   </div>
 </div>
-<button (click)="save()">save</button>
-<button (click)="goBack()">go back</button>
+<button (click)="goBack()" class="back">go back</button>
+<button (click)="save()" class="save">save</button>

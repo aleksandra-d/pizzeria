@@ -3,6 +3,11 @@
   border-collapse: collapse;
   width: 50%;
 }
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  margin: 0;
+}
 table.center-table {
   margin-left: auto;
   margin-right: auto;
@@ -40,6 +45,22 @@ button.back {
   transition-duration: 0.4s;
 
 }
+button.order {
+  background-color: #08CCA2;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 10px;
+  cursor: pointer;
+  border-radius: 0.2em;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+}
 button.remove {
   background-color: #5508CC;
   border: none;
@@ -57,6 +78,9 @@ button.remove {
 
 }
 button.remove:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
+}
+button.order:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }
 button.back:hover {
