@@ -86,4 +86,12 @@ export class SummaryComponent implements OnInit {
   getProductsLength(): number {
     return this.productItems.length;
   }
+
+  /**
+   *
+   */
+  get formData() {
+    return <FormArray>this.summaryForm.get('products');
+  }
+
 }

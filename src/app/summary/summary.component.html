@@ -1,20 +1,16 @@
 <h2>Delivery details</h2>
 
 <form *ngIf="getProductsLength() > 0" class="summary-form" [formGroup]="summaryForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
-  <h4>Produkty</h4>
+  <h3>Products</h3>
   <div *ngIf="getProductsLength() > 0">
-      <div formArrayName="products" *ngFor="let productControl of summaryForm.get('products').controls; let i = index;">
+      <div formArrayName="products" *ngFor="let productControl of formData.controls; let i = index;">
         <div formGroupName="{{i}}">
-          <input [hidden]="true" formControlName="id">
-          <input [hidden]="true" formControlName="type">
-          <input [hidden]="true" formControlName="price">
-          <input [hidden]="true" formControlName="name">
-
-          <table>
+          <table id="summary-table">
             <tr>
-              <td>{{ productControl.value.type}}</td>
-              <td>{{ productControl.value.price }}</td>
+              <td>{{ i + 1 }}</td>
               <td>{{ productControl.value.name }}</td>
+              <td>{{ productControl.value.type}}</td>
+              <td>${{ productControl.value.price }}</td>
               <td>
               </td>
             </tr>
@@ -28,7 +24,6 @@
     <input class="form-control" placeholder="name" type="text" id="name" formControlName="name" required>
     <div *ngIf="summaryForm.get('name').invalid && (summaryForm.get('name').dirty || summaryForm.get('name').touched)" class="alert alert-danger">
       <ul>
-        <!--<li *ngIf="summaryForm.get('name').errors.required">-->
         <li *ngIf="summaryForm.get('name').hasError('required')">
         Name is required
         </li>
@@ -97,10 +92,10 @@
   </div>
 
   <div class="form-group">
-    <button type="submit" [disabled]="!summaryForm.valid">Submit</button>
+    <button type="submit" [disabled]="!summaryForm.valid" class="submit">submit</button>
   </div>
 </form>
 
 <div *ngIf="getProductsLength() == 0">
-  Koszyk jest pusty
+  Cart is empty
 </div>
