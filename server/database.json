@@ -396,6 +396,50 @@
         "phone": "228282"
       },
       "id": 5
+    },
+    {
+      "state": "WAITING",
+      "products": [
+        {
+          "id": "17",
+          "type": "PIZZA",
+          "price": "23",
+          "name": "diaviola"
+        },
+        {
+          "id": "17",
+          "type": "PIZZA",
+          "price": "23",
+          "name": "diaviola"
+        },
+        {
+          "id": "19",
+          "type": "PIZZA",
+          "price": "33",
+          "name": "tonno"
+        },
+        {
+          "id": "17",
+          "type": "PIZZA",
+          "price": "23",
+          "name": "diaviola"
+        },
+        {
+          "id": "11",
+          "type": "PIZZA",
+          "price": "40",
+          "name": "margherita"
+        }
+      ],
+      "clientInfo": {
+        "name": "ola ola",
+        "surname": "ola",
+        "street": "ola",
+        "postalCode": "ola",
+        "city": "ola",
+        "phone": "228282"
+      },
+      "id": 6
     }
   ]
 }
