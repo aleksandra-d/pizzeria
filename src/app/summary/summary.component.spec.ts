@@ -2,8 +2,6 @@ import {
   async,
   ComponentFixture,
   TestBed,
-  fakeAsync,
-  tick,
   inject
 } from '@angular/core/testing';
 import {SummaryComponent} from './summary.component';

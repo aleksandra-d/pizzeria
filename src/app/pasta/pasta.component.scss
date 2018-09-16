@@ -3,11 +3,13 @@ h2 {
   font-size: 3em;
   margin: 0;
 }
+
 #food-table {
   font-family:  Montserrat, Helvetica, Arial, sans-serif;
   border-collapse: collapse;
   width: 50%;
 }
+
 table.center-table {
   margin-left: auto;
   margin-right: auto;
@@ -29,6 +31,7 @@ table.center-table {
   background-color: #FF9C23;
   color: white;
 }
+
 button.back {
   background-color: #998852;
   border: none;
@@ -43,8 +46,8 @@ button.back {
   border-radius: 0.2em;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-
 }
+
 button.add {
   background-color: #08CCA2;
   border: none;
@@ -59,11 +62,12 @@ button.add {
   border-radius: 0.2em;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-
 }
+
 button.add:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }
+
 button.back:hover {
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 10px 30px 0 rgba(0,0,0,0.19);
 }

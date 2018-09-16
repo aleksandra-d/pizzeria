@@ -43,6 +43,10 @@ export class DishesListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  /**
+   * leads to previous location
+   */
   goBack(): void {
     this.location.back();
   }

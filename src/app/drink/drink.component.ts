@@ -25,6 +25,12 @@ export class DrinkComponent implements OnInit, OnDestroy {
         this.drinks = drink;
       });
   }
+
+  /**
+   *
+   * @param event
+   * @param drink
+   */
   addToCart(event: Event, drink: Drink): void {
     const product = new Product();
     product.id = drink.id;
@@ -36,6 +42,10 @@ export class DrinkComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  /**
+   * leads to previous location
+   */
   goBack(): void {
     this.location.back();
   }

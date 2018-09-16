@@ -1,8 +1,6 @@
 <h2>Delivery details</h2>
-
 <form *ngIf="getProductsLength() > 0" class="summary-form" [formGroup]="summaryForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
   <h3>Products</h3>
-
   <div *ngIf="getProductsLength() > 0">
     <table id="summary-table">
       <thead>
@@ -13,7 +11,6 @@
         <th>price</th>
       </tr>
       </thead>
-
       <tbody formArrayName="products" *ngFor="let productControl of formData.controls; let i = index;">
       <tr formGroupName="{{i}}">
         <td>{{ i + 1 }}</td>

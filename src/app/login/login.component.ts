@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.auth.login(this.f.login.value, this.f.password.value)
+    this.auth.login(this.formData.login.value, this.formData.password.value)
       .pipe(first())
       .subscribe(
         users => {
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   /**
    * returns controls
    */
-  get f() {
+  get formData() {
     return this.loginForm.controls;
   }
 }

@@ -1,10 +1,8 @@
 import {TestBed} from '@angular/core/testing';
-
 import {ProductService} from './product.service';
 import {Product} from '../models/Product';
 import {Type} from '../enum/type';
-import {empty} from 'rxjs/internal/Observer';
-import any = jasmine.any;
+
 
 describe('ProductService', () => {
   let service: ProductService;
