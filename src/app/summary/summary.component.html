@@ -2,10 +2,22 @@
 
 <form *ngIf="getProductsLength() > 0" class="summary-form" [formGroup]="summaryForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
   <h3>Products</h3>
+
   <div *ngIf="getProductsLength() > 0">
+
       <div formArrayName="products" *ngFor="let productControl of formData.controls; let i = index;">
         <div formGroupName="{{i}}">
           <table id="summary-table">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>name</th>
+              <th>type</th>
+              <th>price</th>
+            </tr>
+            </thead>
+
+            <tbody>
             <tr>
               <td>{{ i + 1 }}</td>
               <td>{{ productControl.value.name }}</td>
@@ -14,6 +26,7 @@
               <td>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
       </div>

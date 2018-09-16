@@ -9,16 +9,16 @@
   width: 50%;
 }
 
-#summary-table td, #summary-table th {
+ td,  th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#summary-table tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(even){background-color: #f2f2f2;}
 
-#summary-table tr:hover {background-color: #ddd;}
+tr:hover {background-color: #ddd;}
 
-#summary-table th {
+th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
